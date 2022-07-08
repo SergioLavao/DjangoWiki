@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit Article
+{% endblock %}
+
+{% block body %}
+    <h1 class="container" name="title" value='{{ title }}' >Edit {{ title }} Article</h1>
+
+    <form action="{% url 'wiki' title %}" method="POST">
+        <div class="form-group container">
+            {% csrf_token %}
+            <textarea class="form-control m-2" name="content" rows="20" placeholder="Important! Use markdown format" required>{{ content }}</textarea>
+            <button type="button submit" class="btn btn-success m-2">Publish</button>
+        </div>
+    </form>
+
+{% endblock %}

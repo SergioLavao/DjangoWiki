@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ error }}
+{% endblock %}
+
+{% block body %}
+
+<div class="alert alert-danger container" role="alert">
+    {{ error }} {{ info }}! <a href="{% url 'index' %}" class="alert-link">Back to main page</a>.
+</div>
+
+{% endblock %}

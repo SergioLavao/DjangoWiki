@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{wiki_name}}
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    {{ wiki |safe }}
+
+    <form>
+        <button type="button submit" name="edit" value="true" class="btn btn-success m-2">Edit this article</button>
+    </form>
+    
+    <div class="alert alert-secondary" role="alert">
+    Return to main page <a href="{% url 'index' %}" class="alert-link">Here</a>.
+    </div>
+    
+</div>
+
+
+{% endblock %}

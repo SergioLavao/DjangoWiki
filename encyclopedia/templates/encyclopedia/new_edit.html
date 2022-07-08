@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New Article
+{% endblock %}
+
+{% block body %}
+    <h1 class="container">New Article</h1>
+
+    <form action="{% url 'add'  %}" method="POST">
+        <div class="form-group container">
+            {% csrf_token %}
+            <input type="text" name="title" class="form-control m-2" id="validationTooltip03" placeholder="Title"required>
+            <textarea class="form-control m-2" name="content" rows="20" placeholder="Important! Use markdown format" required></textarea>
+            <button type="button submit" class="btn btn-success m-2">Publish</button>
+        </div>
+    </form>
+
+{% endblock %}
